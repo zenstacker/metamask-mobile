@@ -45,7 +45,7 @@ const SiteRowItem = ({
       style={({ pressed }) =>
         tw.style(
           'flex-row items-center justify-between py-2',
-          isViewAll ? 'px-4' : 'pr-4',
+          isViewAll && 'pl-4',
           pressed && 'bg-pressed',
         )
       }
@@ -72,14 +72,18 @@ const SiteRowItem = ({
         )}
         {/* Site Info */}
         <Box twClassName="flex-1">
-          <Text variant={TextVariant.HeadingMd}>{site.name}</Text>
-          <Text variant={TextVariant.BodyMd} twClassName="text-alternative">
+          <Text variant={TextVariant.BodyMd} style={tw.style('font-medium')}>
+            {site.name}
+          </Text>
+          <Text variant={TextVariant.BodySm} twClassName="text-alternative">
             {site.displayUrl}
           </Text>
         </Box>
       </Box>
       {/* Arrow Icon */}
-      <Icon name={IconName.Arrow2UpRight} size={IconSize.Md} />
+      <Box style={tw.style(isViewAll && 'pr-4')}>
+        <Icon name={IconName.Arrow2UpRight} size={IconSize.Md} />
+      </Box>
     </Pressable>
   );
 };
