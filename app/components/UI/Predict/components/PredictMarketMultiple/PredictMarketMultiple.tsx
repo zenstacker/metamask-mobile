@@ -204,11 +204,7 @@ const PredictMarketMultiple: React.FC<PredictMarketMultipleProps> = ({
               >
                 <Box twClassName="flex-1">
                   <Text
-                    variant={
-                      isCarousel
-                        ? TextVariant.BodyXSMedium
-                        : TextVariant.BodySMMedium
-                    }
+                    variant={TextVariant.BodySMMedium}
                     color={TextColor.Default}
                     numberOfLines={1}
                     style={tw.style(
@@ -221,11 +217,7 @@ const PredictMarketMultiple: React.FC<PredictMarketMultipleProps> = ({
 
                 <Box>
                   <Text
-                    variant={
-                      isCarousel
-                        ? TextVariant.BodyXSMedium
-                        : TextVariant.BodySMMedium
-                    }
+                    variant={TextVariant.BodySMMedium}
                     color={TextColor.Alternative}
                   >
                     {getOutcomePercentage(
@@ -243,6 +235,7 @@ const PredictMarketMultiple: React.FC<PredictMarketMultipleProps> = ({
                     size={isCarousel ? ButtonSize.Sm : ButtonSize.Md}
                     label={
                       <Text
+                        variant={TextVariant.BodySM}
                         style={tw.style('font-medium')}
                         color={TextColor.Success}
                         numberOfLines={1}
@@ -260,6 +253,9 @@ const PredictMarketMultiple: React.FC<PredictMarketMultipleProps> = ({
                     width={ButtonWidthTypes.Full}
                     label={
                       <Text
+                        variant={
+                          isCarousel ? TextVariant.BodyXS : TextVariant.BodySM
+                        }
                         style={tw.style('font-medium')}
                         color={TextColor.Error}
                         numberOfLines={1}

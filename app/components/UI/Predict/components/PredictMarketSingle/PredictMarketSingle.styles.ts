@@ -16,7 +16,7 @@ const styleSheet = (params: {
       ...(vars.isCarousel && { height: '100%' }),
       backgroundColor: theme.colors.background.section,
       borderRadius: 16,
-      padding: vars.isCarousel ? 12 : 16,
+      padding: 16,
       marginVertical: vars.isCarousel ? 0 : 8,
     },
     marketHeader: {
