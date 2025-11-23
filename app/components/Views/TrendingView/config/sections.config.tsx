@@ -24,7 +24,7 @@ import { usePerpsMarkets } from '../../../UI/Perps/hooks';
 import { PerpsConnectionProvider } from '../../../UI/Perps/providers/PerpsConnectionProvider';
 import { PerpsStreamProvider } from '../../../UI/Perps/providers/PerpsStreamManager';
 import { useSearchRequest } from '../../../UI/Trending/hooks/useSearchRequest';
-import { IconName } from '@metamask/design-system-react-native';
+import { Box, IconName } from '@metamask/design-system-react-native';
 import type { SiteData } from '../SectionSites/SiteRowItem/SiteRowItem';
 import SiteRowItemWrapper from '../SectionSites/SiteRowItemWrapper';
 import SiteSkeleton from '../SectionSites/SiteSkeleton/SiteSkeleton';
@@ -186,7 +186,9 @@ export const SECTIONS_CONFIG: Record<SectionId, SectionConfig> = {
       });
     },
     RowItem: ({ item }) => (
-      <PredictMarket market={item as PredictMarketType} isCarousel />
+      <Box twClassName="py-2">
+        <PredictMarket market={item as PredictMarketType} isCarousel />
+      </Box>
     ),
     Skeleton: () => <PredictMarketSkeleton isCarousel />,
     getSearchableText: (item) =>
