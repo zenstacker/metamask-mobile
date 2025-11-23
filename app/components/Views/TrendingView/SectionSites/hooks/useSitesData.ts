@@ -66,20 +66,13 @@ export const useSitesData = ({
         // Use current timestamp
         const timestamp = Date.now();
         const url = `${PORTFOLIO_API_BASE_URL}explore/sites?limit=${limit}&ts=${timestamp}`;
-
-        Logger.log('[useSitesData] Fetching sites from:', url);
-
         const response = await fetch(url);
-
-        Logger.log('[useSitesData] Response status:', response.status);
 
         if (!response.ok) {
           throw new Error(`Failed to fetch sites: ${response.statusText}`);
         }
 
         const data = (await response.json()) as ApiSitesResponse;
-
-        Logger.log('[useSitesData] Received sites data:', data);
 
         // Transform API response to SiteData format
         const transformedSites: SiteData[] = data.dapps.map((dapp) => ({
@@ -90,8 +83,6 @@ export const useSitesData = ({
           logoUrl: dapp.logoSrc,
           featured: dapp.featured,
         }));
-
-        Logger.log('[useSitesData] Transformed sites:', transformedSites);
 
         setSites(transformedSites);
       } catch (err) {
