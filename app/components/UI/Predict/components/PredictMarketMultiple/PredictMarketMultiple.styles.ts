@@ -15,6 +15,10 @@ const styleSheet = (params: {
       borderRadius: 16,
       padding: 16,
       marginVertical: vars.isCarousel ? 0 : 8,
+      ...(vars.isCarousel && {
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+      }),
     },
     buttonContainer: {
       flexDirection: 'row',

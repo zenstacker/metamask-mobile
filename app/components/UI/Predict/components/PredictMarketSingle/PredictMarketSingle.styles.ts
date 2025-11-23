@@ -36,7 +36,7 @@ const styleSheet = (params: {
       justifyContent: 'flex-end',
       alignItems: 'flex-end',
       width: '100%',
-      marginTop: 8,
+      marginTop: vars.isCarousel ? 0 : 8,
     },
     buttonContainer: {
       flexDirection: 'row',
